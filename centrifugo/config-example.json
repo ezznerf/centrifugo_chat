@@ -1,0 +1,9 @@
+{
+  "token_hmac_secret_key": "тут секретики должны быть",
+  "api_key": "тоже вводишь своё чё хочешь",
+  "admin_password": "для админки парполь",
+  "admin_secret": "уже не поню для чего",
+  "admin": true,
+  "allowed_origins": ["http://localhost:3000 тут указываешь хосты с которых можно стучаться в частности фронт потому что он на другом домене"],
+  "allow_subscribe_for_client": true
+}
