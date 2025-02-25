@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
+    public function index()
+    {
+        return view('login.index');
+    }
     public function login(LoginRequest $request): RedirectResponse{
         $validated = $request->validated();
 
@@ -20,8 +24,6 @@ class LoginController extends Controller
             return redirect()->intended('home');
         }
 
-        return back()->withErrors([
-            'email' => 'Предоставленные учетные данные не соответствуют нашим записям.',
-        ])->onlyInput('email');
+        return back()->withErrors();
     }
 }

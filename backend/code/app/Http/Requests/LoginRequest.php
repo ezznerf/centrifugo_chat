@@ -22,8 +22,19 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|exists:users,email',
-            'password' => 'required',
+            'email' => 'email|required|exists:users,email',
+            'password' => 'string|required|min:6',
+        ];
+    }
+
+    public function messages(): array{
+        return [
+            'email.required' => 'Email is required',
+            'email.email' => 'Email is invalid',
+            'email.exists' => 'Email is invalid',
+            'password.required' => 'Password is required',
+            'password.string' => 'Password is invalid',
+            'password.min' => 'Password is too short',
         ];
     }
 }
